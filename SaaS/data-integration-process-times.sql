@@ -8,5 +8,5 @@ from data_intgr_data_set_status didss
 	join data_intgr di
 	 on didss.data_intgr_pk1 = di.pk1
 where DATE_PART('hour', last_entry_dt - first_entry_dt) * 60 + DATE_PART('minute', last_entry_dt - first_entry_dt) != '0' and
-	  di.name like '%Student%'
+	  di.name like '%Part_of_Integration_Name%' 
 order by didss.pk1 desc
