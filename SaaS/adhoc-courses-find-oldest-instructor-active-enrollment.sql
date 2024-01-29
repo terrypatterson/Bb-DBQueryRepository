@@ -29,8 +29,8 @@ from (select row_number() over (partition by cu.crsmain_pk1 order by cu.enrollme
 		    and cu.role = 'P'
 		    and cu.row_status = '0'
 		    and cu.available_ind = 'Y'
-		    and cm.course_id not like '%XLM%'
-		    and cm.data_src_pk1 in ('364','351','377','410','435','461','2')
+		    --and cm.course_id not like '%XLM%' (use if you want to not include some variable in a course_id)
+		    and cm.data_src_pk1 in ('DATA_SOURCE_KEY')
 		group by cm.course_id,
 			   cm.course_name,
 			   cm.dtcreated,
